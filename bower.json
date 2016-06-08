@@ -1,6 +1,6 @@
 {
   "name": "word-bubble",
-  "version": "1.0.2",
+  "version": "1.0.9",
     "main": ["dist/wordBubble.js", "wordBubble.css"],
   "ignore": [
     "**/.*",
