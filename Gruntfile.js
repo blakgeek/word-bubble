@@ -98,7 +98,6 @@ module.exports = function (grunt) {
         },
         bump: {
             options: {
-                push: false,
                 pushTo: 'origin',
                 commitFiles: ['-a'],
                 updateConfigs: ['pkg']
