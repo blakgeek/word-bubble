@@ -31,7 +31,6 @@ function WordBubble() {
             font: 'Helvetica',
             fontSize: 30,
             width: 800,
-            animation: 'pop-in',
             baselineShift: 0
         });
 
@@ -98,7 +97,9 @@ function WordBubble() {
         });
 
         canvas.className = 'word-bubble';
-        canvas.classList.add(cfg.animation);
+        if(cfg.animation) {
+            canvas.classList.add(cfg.animation);
+        }
         return canvas;
     }
 

@@ -4,10 +4,10 @@ canvas.word-bubble {
     left: 0;
     right: 0;
     margin: auto;
-    opacity: 0;
 
     &.pop-in {
         transform: scale(.1);
+        opacity: 0;
         &.enter {
             transition: transform 250ms cubic-bezier(.4, 0, .6, 2), opacity 250ms;
             transform: none;
@@ -17,6 +17,7 @@ canvas.word-bubble {
 
     &.from-left {
         transform: translate3d(-500px, 0, 0);
+        opacity: 0;
         &.enter {
             transition: transform 250ms cubic-bezier(.4, 0, .6, 1.2), opacity 500ms;
             transform: none;
@@ -26,6 +27,7 @@ canvas.word-bubble {
 
     &.from-right {
         transform: translate3d(500px, 0, 0);
+        opacity: 0;
         &.enter {
             transition: transform 250ms cubic-bezier(.4, 0, .6, 1.2), opacity 500ms;
             transform: none;
@@ -35,6 +37,7 @@ canvas.word-bubble {
 
     &.from-top {
         transform: translate3d(0, -500px, 0);
+        opacity: 0;
         &.enter {
             transition: transform 250ms cubic-bezier(.4, 0, .6, 1.2), opacity 500ms;
             transform: none;
@@ -44,6 +47,7 @@ canvas.word-bubble {
 
     &.from-bottom {
         transform: translate3d(0, 500px, 0);
+        opacity: 0;
         &.enter {
             transition: transform 250ms cubic-bezier(.4, 0, .6, 1.2), opacity 500ms;
             transform: none;
