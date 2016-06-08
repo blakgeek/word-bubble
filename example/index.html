@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Bubble Demo</title>
+    <link rel="stylesheet" href="index.css" type="text/css"/>
+    <link rel="stylesheet" href="../dev/wordBubble.css" type="text/css"/>
+</head>
+<body>
+<div class="config">
+    <div class="options">
+        <select id="animation">
+            <option value="pop-in">Pop In</option>
+            <option value="from-left">From Left</option>
+            <option value="from-right">From Right</option>
+            <option value="from-top">From Top</option>
+            <option value="from-bottom">From Bottom</option>
+        </select>
+        <input id="strokeColor" placeholder="Stroke Color">
+        <input id="strokeWidth" placeholder="Stroke Width" type="number">
+        <input id="depth" placeholder="Depth" type="number">
+        <input id="font" placeholder="Font" type="text">
+        <input id="baselineShift" placeholder="Baseline Shift" type="number">
+        <input id="lineHeight" placeholder="Line Height" type="number">
+    </div>
+    <textarea id="input"></textarea>
+</div>
+<div class="actions">
+    <button onclick="pop()">Show Message</button>
+    <button onclick="pop(true)">Show Multi Message</button>
+    <button onclick="clearMessages()">Clear Messages</button>
+</div>
+<div id="target"></div>
+<script src="../bower_components/lodash/dist/lodash.min.js"></script>
+<script src="../dev/wordBubble.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
