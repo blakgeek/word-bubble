@@ -1,8 +1,9 @@
 var bubbler = new WordBubble();
 var input = document.getElementById('input');
 var target = document.getElementById('target');
+var replace = document.getElementById('replace');
 
-var customOpts = ['strokeColor', 'strokeWidth', 'depth', 'animation', 'font', 'baselineShift', 'lineHeight'];
+var customOpts = ['strokeColor', 'strokeWidth', 'depth', 'animation', 'font', 'baselineShift', 'lineHeight', 'fontSize'];
 
 function pop(multi) {
 
@@ -28,9 +29,9 @@ function pop(multi) {
         bubbler.pop(input.value.split(/\n/).map(function (line, i) {
             options.animation = i % 2 ? 'from-left' : 'from-right';
             return genConfig(line, options);
-        }), target);
+        }), target, replace.checked);
     } else {
-        bubbler.pop(genConfig(input.value, options), target);
+        bubbler.pop(genConfig(input.value, options), target, replace.checked);
     }
 }
 

@@ -84,7 +84,7 @@ module.exports = function (grunt) {
         },
         watch: {
             example: {
-                files: ['src/**/*', 'example/**/*'],
+                files: ['src/**/*', 'example/**/*', '!example/**/*.css'],
                 tasks: 'example',
                 options: {
                     livereload: true

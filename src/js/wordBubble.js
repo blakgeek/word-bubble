@@ -2,19 +2,22 @@ function WordBubble() {
 
     this.pop = function (configs, target, replace) {
 
-        var canvases = [].concat(configs).map(function(config) {
+        // cleanup old canvases if necessary
+        if (replace && target && target.querySelector) {
+
+            Array.prototype.forEach.call(target.querySelectorAll('canvas.word-bubble'), function(canvas) {
+                target.removeChild(canvas);
+            });
+        }
+
+        [].concat(configs).map(function(config) {
             return canvasify(config);
         }).forEach(function(canvas) {
 
 
             if (target && target.querySelector) {
-                var oldCanvas = target.querySelector('canvas.word-bubble');
 
-                if (replace === true && oldCanvas) {
-                    target.replaceChild(canvas, oldCanvas);
-                } else {
-                    target.appendChild(canvas);
-                }
+                target.appendChild(canvas);
                 canvas.offsetWidth;
                 canvas.classList.add('enter');
             }
