@@ -3,7 +3,7 @@ var input = document.getElementById('input');
 var target = document.getElementById('target');
 var replace = document.getElementById('replace');
 
-var customOpts = ['strokeColor', 'strokeWidth', 'depth', 'animation', 'font', 'baselineShift', 'lineHeight', 'fontSize'];
+var customOpts = ['strokeColor', 'strokeWidth', 'depth', 'animation', 'font', 'baselineShift', 'lineHeight', 'fontSize', 'align'];
 
 function pop(multi) {
 

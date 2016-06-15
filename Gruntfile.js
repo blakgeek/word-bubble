@@ -87,13 +87,14 @@ module.exports = function (grunt) {
                 files: ['src/**/*', 'example/**/*', '!example/**/*.css'],
                 tasks: 'example',
                 options: {
-                    livereload: true
+                    livereload: false
                 }
             }
         },
         serve: {
             options: {
-                port: 9099
+                port: 9099,
+                livereload: false
             }
         },
         bump: {
