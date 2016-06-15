@@ -35,7 +35,7 @@ function WordBubble() {
             depth: 10,
             font: 'Helvetica',
             fontSize: 30,
-            width: screen.width,
+            width: 'auto',
             baselineShift: 0,
             innerStroke: true,
             align: 'center'
@@ -53,9 +53,15 @@ function WordBubble() {
         var ratio = devicePixelRatio / backingStoreRatio;
         var font = cfg.fontSize + 'pt ' + cfg.font;
         ctx.font = font;
-        var info = split(ctx, cfg.text, cfg.width - strokeWidth * 2 - 10);
+        var maxWidth = isNaN(+cfg.width) ? screen.width : cfg.width;
+        var info = split(ctx, cfg.text, maxWidth - strokeWidth * 2 - 10);
         var lines = info.lines;
-        var width = cfg.width;
+        var width;
+        if(cfg.width === 'auto') {
+            width = info.widest + strokeWidth * 2 + 10;
+        } else {
+            width = maxWidth;
+        }
         canvas.width = ratio * width;
         canvas.style.width = width + 'px';
         var lineHeight = +cfg.lineHeight || (+cfg.fontSize + +strokeWidth);
